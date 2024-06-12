@@ -4,15 +4,18 @@ import { Add } from './components/Add';
 import { View } from './components/View';
 import { Search } from './components/Search';
 import { Delete } from './components/Delete';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Add></Add>
-      <View></View>
-      <Search></Search>
-      <Delete></Delete>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/'element={(<Add/>)}/>
+    <Route path='/search'element={(<Search/>)}/>
+    <Route path='/delete'element={(<Delete/>)}/>
+    <Route path='/view'element={(<View/>)}/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
